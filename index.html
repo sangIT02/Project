@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai 1</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body style="display: block;">
+    <!-- - nhap:
+    let dob =  prompt("Moi Nhap Nam Sinh"); 
+    let as    =  confirm("Ban co thuc su muon xoa khong"); (true/false)
+
+    - XUAT
+    alert("thong bao");
+    document.write("<p> Chuc mung nam moi </p>");
+    <script>
+        alert("Chao Ban");
+        if(condition){
+
+        }
+        else{
+
+        }
+        for(int i = 0;i < n;i++){
+
+        }
+        while(condition){
+
+        }
+        do{
+
+        }while(condition);
+        switch(){
+            case:1 ...;
+            break;
+            ....
+        }
+    </script>
+
+    -->
+    <div >
+        Ngay <select name="ngay" id="ngay">
+            <script>
+                for (let i = 1; i <= 31; i++) {
+                    document.write('<option value= "' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+
+        Thang <select name="month" id="month">
+            <script>
+                for (let i = 1; i <= 12; i++) {
+                    document.write('<option value= "' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+
+        Nam <select name="year" id="year">
+            <script>
+                let cd = new Date();
+                let cy = cd.getFullYear();
+                for (let i = 1900; i <= cy; i++) {
+                    document.write('<option value= "' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+    </div>
+
+
+
+    <div>
+        Ngay <select name="day1" id="day1">
+
+        </select>
+        Thang <select name="month1" id="month1">
+
+        </select>
+        Nam <select name="year1" id="year1">
+
+        </select>
+
+        <script>
+            let selday = document.getElementById('day1');
+            for (let i = 1; i <= 31; i++) {
+                let op = document.createElement('option');
+                op.value = i;
+                op.text = i;
+                selday.add(op);
+            }
+            let selmonth = document.getElementById('month1');
+            for (let i = 1; i <= 12; i++) {
+                let op = document.createElement('option');
+                op.value = i;
+                op.text = i;
+                selmonth.add(op);
+            }
+            let selyear = document.getElementById('year1');
+            let cd1 = new Date();
+            let cy2 = cd.getFullYear();
+            for (let i = 1900; i <= cy2; i++) {
+                let op = document.createElement('option');
+                op.value = i;
+                op.text = i;
+                selyear.add(op);
+            }
+        </script>
+    </div>
+
+    <div>
+        Ngay <select name="day2" id="day2">
+
+        </select>
+        Thang <select name="month2" id="month2">
+
+        </select>
+        Nam <select name="year2" id="year2">
+
+            <script>
+                function creaOption(start, end, sel) {
+                    for (let i = start; i <= end; i++) {
+                        let op = document.createElement('option');
+                        op.value = i;
+                        op.text = i;
+                        sel.add(op);
+                    }
+
+                }
+                let selday2 = document.getElementById('day2');
+                creaOption(1, 31, selday2);
+                let selmonth2 = document.getElementById('month2');
+                creaOption(1, 12, selmonth2);
+                let selyear2 = document.getElementById('year2');
+                let cd2 = new Date();
+                let cy3 = cd2.getFullYear();
+                creaOption(1900, cy3, selyear2);
+
+            </script>
+
+    </div>
+
+
+    <div >
+        He so a: <input type="text" id="a" name="a"><br>
+        He so b: <input type="text" id="b" name="b"><br>
+        He so c: <input type="text" id="c" name="c"><br>
+
+        Ket Qua: <input type="text" id="result" name="result">
+
+        <button onclick="solver()">Giai</button>
+        <button onclick="clearAll()">Xoa</button>
+        <script>
+            function solver() {
+                let a = document.getElementById("a").value;
+                let b = document.getElementById("b").value;
+                let c = document.getElementById("c").value;
+                let delta = b * b - 4 * a * c;
+                let rs = document.getElementById("result");
+                if (delta == 0) {
+                    let x = -b / (2 * a);
+                    rs.innerHTML = 'Phuong trinh co nghiem kep x1 = x2 = ' + x;
+
+                }
+                else if (delta > 0) {
+                    let x1 = (-b - Math.sqrt(delta)) / (2 * a);
+                    let x2 = (-b + Math.sqrt(delta)) / (2 * a);
+                    rs.innerHTML = 'Phuong trinh co 2 nghiem phan biet: x1 = ' + new Number(x1).toFixed(2) + ' x2 = ' + new Number(x2).toFixed(2);
+
+                }
+                else {
+                    rs.innerHTML = 'Phuong trinh vo nghiem';
+                }
+            }
+            function clearAll() {
+                rs.innerHTML = '';
+            }
+        </script>
+    </div>
+
+    <div id="click">
+        <button onclick="ghep('1')">1</button>
+        <button onclick="ghep('2')">2</button>
+        <button onclick="ghep('3')">3</button>
+        <button onclick="ghep('4')">4</button>
+        <button onclick="ghep('5')">5</button>
+        <button onclick="ghep('+')">+</button>
+        <button onclick="ghep('6')">6</button>
+        <button onclick="ghep('7')">7</button>
+        <button onclick="ghep('8')">8</button>
+        <button onclick="ghep('9')">9</button>
+        <button onclick="ghep('0')">0</button>
+        <button onclick="ghep('=')">=</button>
+    </div>
+</body>
+
+</html>
